@@ -6,6 +6,7 @@ from seqrecord import *
 from seq import *
 from seqfeatures import * 
 from entrez import *
+from blast import *
 
 
 if __name__ =="__main__":
@@ -64,5 +65,10 @@ if __name__ =="__main__":
 		print record
 
 		record=fetch_database('nucleotide','8332116')
+		print record
+
+	elif(sys.argv[1]=="7"):
+		blast_result=get_blast("blastn","nt","8332116")
+		record=read_blast_result(blast_result)
 		print record
  
