@@ -2,6 +2,8 @@
 
 from Bio import SeqFeature
 
-def get_location(start,end):
-	exact_location= feature.FeatureLocation(start,end)
-	return exact_location
+def get_location(feature):
+	loc=feature.location
+	return (loc.start,loc.end,loc.strand)
+	#exact_location= feature.FeatureLocation(start,end)
+	#return exact_location
